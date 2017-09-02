@@ -8,11 +8,10 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 })
 
 module.exports = {
-  entry: './client/index.js',
+  entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'bundle.js',
-    publicPath: ''
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
@@ -20,16 +19,9 @@ module.exports = {
       { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.css$/, exclude: /node_modules/, loaders: ['style-loader', 'css-loader'] },
       { test: /\.(woff2?|jpe?g|png|gif|ico)$/, use: 'file-loader?name=./assets/images/[name].[ext]', loaders: ['file-loader'], exclude: /node_modules/ },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
-      }
+      { test: /\.json$/, loader: 'json-loader' }
     ]
   },
-  node: {
-    dns: 'mock',
-    net: 'mock'
-    },
   devtool: 'source-map',
   plugins: [HtmlWebpackPluginConfig]
 };

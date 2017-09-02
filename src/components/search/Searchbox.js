@@ -1,5 +1,5 @@
 import React from 'react';
-import { isEmpty } from '../../utils/appFunctions.js';
+import { isEmpty } from '../../utils/appFunctions';
 
 class Searchbox extends React.Component {
     constructor(props) {

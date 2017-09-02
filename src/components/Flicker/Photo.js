@@ -1,6 +1,6 @@
 import React from 'react';
 import renderHTML from 'react-render-html';
-import { extractFlickrUserName } from '../../utils/appFunctions.js';
+import { extractFlickrUserName } from '../../utils/appFunctions';
 
 class Photo extends React.Component {
     render() {
