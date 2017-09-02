@@ -1,0 +1,118 @@
+/* bootstrap import */
+@import url('//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css');
+/* loading spinner */
+@import url('//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* bootstrap overrides */
+.jumbotron {
+    margin-bottom:0;
+    background-color: #2780e3 !important;
+    color: white;
+    padding: 0;
+}
+
+.jumbotron h1 {
+    font-size: 3em;
+    display: inline-block;
+}
+
+.jumbotron p {
+    font-size: 1.2em;
+    margin-top: 40px;
+}
+
+.navbar-inverse {
+    border-radius: 0;
+}
+
+.btn-align {
+    padding: 8px 12px;
+    line-height: 1.4;
+    vertical-align: middle;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    font-size:1.2em;
+}
+
+.navbar-inverse .navbar-nav>li>a:link,
+.navbar-inverse .navbar-nav>li>a:active,
+.navbar-inverse .navbar-nav>li>a:visited {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #39b3d7;
+}
+
+/* to compensate for sticky footer */
+body {
+    margin-bottom:150px;
+}
+
+/* App Styles */
+.contentContainer {
+    text-align: center;
+}
+
+.contentContainer .fa-circle-o-notch{
+    font-size: 50px;
+    margin-top: 100px;
+}
+
+#searchLabel{
+    margin-top: 5px;
+    margin-right: 20px; 
+}
+
+@media only screen  and (max-width : 768px) {
+    .card{
+        max-width: 70%;
+        margin: 0 auto;
+        float: none;
+    }
+}
+
+@media only screen  and (max-width : 425px) {
+    #searchLabel {
+        display: none;
+    }
+}
+
+.photoContainer {
+    text-align: left;
+    visibility: hidden;
+}
+
+.new{
+    height: 300px;
+    overflow: auto;
+}
+
+.photoContainer .card {
+    border: solid 2px;
+    padding:15px;
+    margin-bottom: 20px;
+}
+
+.photoContainer .card img {
+    margin-bottom: 15px;
+}
+
+.photoContainer .card h4 {
+    display:inline-block;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.photoContainer .card p a {
+    text-decoration: underline;
+    word-wrap: break-word;
+}
+
+.photoContainer .card p {
+    max-width: 95%;
+    word-wrap: break-word;
+}
+
+
