@@ -20,7 +20,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.26.0",
     "css-loader": "^0.28.5",
-    "eslint": "4.6.0",
+    "eslint": "^4.6.0",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-react": "^7.3.0",

@@ -1,5 +1,5 @@
 import React from 'react';
-import Photo from './Photo';
+import Photos from './Photos';
 import $ from 'jquery';
 import Masonry from 'react-masonry-component';
 
@@ -9,10 +9,25 @@ constructor(props) {
         super(props);
             this.state = {
             items: [],
-            masonry: false
+            masonry: false,
+            searchQuery : ''
         };
-        this.masonryState = false;
-        this.handleLayoutComplete = this.handleLayoutComplete.bind(this);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps);
+        this.runSearchQuery(nextProps.searchQuery);
+    }
+
+    runSearchQuery(query) {
+        console.log(query);
+        $.getJSON(query)
+        .done(function (data) {
+            const items = data.items;
+            this.setState({ ...this.state, items });
+            // reference to masonry to add complete handler
+           // this.masonry.on('layoutComplete', this.handleLayoutComplete);
+        }.bind(this));
     }
 
     componentDidMount() {
@@ -29,38 +44,13 @@ constructor(props) {
         }.bind(this));
     }
 
-    handleLayoutComplete() {
-        this.masonryState = true;
-        // prevent flash of content before masonry has fixed it 
-        document.querySelector('.photoContainer').style.visibility='visible';
-        document.querySelector('.fa-circle-o-notch').style.display='none';
-    }
-
-    componentWillUpdate() {
-
-    }
-
     render() {
         const results = this.props.searchResults || this.state.items || [];
         const masonry = this.masonryState;
 
         return results.length > 0
         ?   <div className="container photoContainer">
-                <Masonry onLayoutComplete={ this.handleLayoutComplete } className="masonryLayout" ref={function(c) {this.masonry = this.masonry || c.masonry;}.bind(this)}>
-                    {results.map((t, i) =>
-                        <Photo 
-                            ms={ masonry }
-                            key={i}
-                            media={t.media.m}
-                            title={t.title}
-                            link={t.link}
-                            author={t.author}
-                            authorId={t.author_id}
-                            description={t.description}
-                            tags={t.tags}
-                        />
-                    )}
-                </Masonry>
+                <Photos items={this.state.items} searchResults={this.props.searchResults} />
             </div>
         : <div className="container noResults"><br/><h4>No Results</h4></div>
     }

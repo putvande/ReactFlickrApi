@@ -1,19 +1,18 @@
-# React-Startpack
-Bare minimum setup for a simple react app. Should save you a lot of time. You are very welcome!!
+# React-Flickr-API Demo
 
-For a detailed description of how the startpack works head over to the link below:
+This demo is intended to showcase skills using React.js, Webpack and the Flickr API
 
-https://scotch.io/tutorials/setup-a-react-environment-using-webpack-and-babel
+## Aims 
 
-## Pre-requisites 
-
-* Install node on your machine
-* Install yarn (yarn is used in place of npm)
+* To Load images in from the Flickr public API
+* To allow a search facility
+* To optimize image loading
+* To display good use of component separation
 
 ## Installation
 
 * Fork this repo.
-* Navigate to your fork of the react-startpack.
+* Navigate to your fork of the react-flickr-api.
 * Under your repository name, click Clone or download.
 * In the Clone with HTTPs section, copy the clone URL for the repository.
 * Open Terminal.

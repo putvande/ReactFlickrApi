@@ -1,28 +1,22 @@
 import React from 'react';
 import Searchbox from '../search/Searchbox.js';
 import FlickrGallery from '../Flicker/FlickrGallery';
-import $ from 'jquery';
 
 class ContentContainer extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            queryString: 'https://api.flickr.com/services/feeds/photos_public.gne?format=json&lang=en-us&jsoncallback=?',
-            searchResults: []
+            queryString : 'https://api.flickr.com/services/feeds/photos_public.gne?format=json&lang=en-us&jsoncallback=?',
+            currentQuery : '',
+            searchResults : []
         };
         this.runQuery = this.runQuery.bind(this);
     }
 
     runQuery (searchQuery) {
         const query = this.state.queryString + '&tags=' + searchQuery;
-        const items = $.getJSON(query)
-        .done(function (data) {
-            const items = data.items;
-            this.setState({ ...this.state, items });
-            // reference to masonry to add complete handler
-           // this.masonry.on('layoutComplete', this.handleLayoutComplete);
-        }.bind(this));
+        this.setState({ currentQuery : query });
     }
 
     render() {
@@ -33,7 +27,7 @@ class ContentContainer extends React.Component {
 			<div className="contentContainer">
 				<Searchbox runQuery={ this.runQuery } />
 				<span className="fa fa-circle-o-notch fa-spin"></span>
-				<FlickrGallery searchResults={ searchResults } />
+				<FlickrGallery searchQuery={ this.state.currentQuery } searchResults={ searchResults } />
             </div>
         );
     }
