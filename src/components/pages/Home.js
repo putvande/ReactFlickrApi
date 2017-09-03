@@ -2,14 +2,15 @@ import React from 'react';
 import Searchbox from '../search/Searchbox.js';
 import FlickrGallery from '../Flicker/FlickrGallery';
 
-class ContentContainer extends React.Component {
+class Home extends React.Component {
 
     constructor(props) {
         super(props);
         // Set up the base search string for API and the state for the next search built
         this.state = {
             queryString : 'https://api.flickr.com/services/feeds/photos_public.gne?format=json&lang=en-us&jsoncallback=?',
-            currentQuery : ''
+            currentQuery : '',
+            loading: true
         };
         // bind child function from search component to parent
         this.runQuery = this.runQuery.bind(this);
@@ -34,4 +35,4 @@ class ContentContainer extends React.Component {
 
 };
 
-export default ContentContainer;
+export default Home;

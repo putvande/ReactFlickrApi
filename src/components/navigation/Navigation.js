@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Navigation extends React.Component {
   // Bootstrap Navbar and Mobile Navbar
@@ -14,9 +15,9 @@ class Navigation extends React.Component {
                   </button>
                   <div className="collapse navbar-collapse" id="navHeaderCollapse">
                     <ul className="nav navbar-nav navbar-left">
-                      <li><a href="#">HOME</a></li>
-                      <li><a href="#">ABOUT ME</a></li>
-                      <li><a href="#">CONTACT</a></li>
+                      <li><Link to='/'>Home</Link></li>
+                      <li><Link to='/about'>About Me</Link></li>
+                      <li><Link to='/contact'>Contact</Link></li>
                     </ul>
                   </div>
                 </div>

@@ -60,12 +60,39 @@ body {
     margin-top: 100px;
 }
 
+.searchContainer {
+    padding: 0 20px;
+}
+
 .searchLabelText {
     text-align: left;
 }
 
 #searchLabel{
     margin-top: 0;
+}
+
+#searchBox {
+    font-size: 1.2em;
+}
+
+.container>.navbar-collapse {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.container.about,
+.container.contact{
+    padding-top: 50px;
+}
+
+.container.about p,
+.container.contact p{
+    font-size: 1.1em;
+}
+
+.container.about img {
+    max-width: 100%;
 }
 
 @media only screen and (max-width : 768px) {
@@ -75,8 +102,12 @@ body {
         float: none;
     }
 
-    .searchLabelText h4 {
-        font-size: 0.9em;
+    .container.about img{
+        float: none !important;
+    }
+
+    .aboutImg{
+        text-align: center;
     }
 
     .navbar-fixed-bottom p.navbar-text.pull-left {

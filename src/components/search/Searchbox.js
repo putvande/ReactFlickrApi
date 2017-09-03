@@ -29,7 +29,7 @@ class Searchbox extends React.Component {
         const inputError = this.state.inputError;
         return (
             <form className="container" onSubmit={(e) => { this.runSearch(e) }}>
-                <div className="searchBox row">
+                <div className="searchContainer row">
                         <div className="input-group searchLabelText col-xs-12 col-sm-4 col-md-4 col-lg-3 pull-left align-left">
                             <h4>Search the Flickr API for content: </h4>
                         </div>

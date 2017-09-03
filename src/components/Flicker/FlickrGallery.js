@@ -16,6 +16,7 @@ constructor(props) {
 
     // search query from the SearchBox sibling component via parent
     componentWillReceiveProps(nextProps) {
+        this.setState({ masonry: true });
         this.runSearchQuery(nextProps.searchQuery);
     }
 
@@ -48,11 +49,11 @@ constructor(props) {
         ?   <div className="container photoContainer">
                 <Photos items={this.state.items} searchResults={this.props.searchResults} />
             </div>
-        : <div className="container noResults">
-            <div className="alert alert-info">
-                <h4><strong>No Results Returned...</strong> Please try another search.</h4>
+        :   <div className="container noResults">
+                <div className="alert alert-info">
+                    <h4><strong>No Results Returned...</strong> Please try another search.</h4>
+                </div>
             </div>
-        </div>
     }
 
 };
