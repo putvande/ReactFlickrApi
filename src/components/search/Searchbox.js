@@ -31,12 +31,12 @@ class Searchbox extends React.Component {
             <form className="container" onSubmit={(e) => { this.runSearch(e) }}>
                 <div className="searchContainer row">
                         <div className="input-group searchLabelText col-xs-12 col-sm-4 col-md-4 col-lg-3 pull-left align-left">
-                            <h4>Search the Flickr API for content: </h4>
+                            <h4>Search the Flickr public API: </h4>
                         </div>
                         <div className="input-group col-xs-12 col-sm-8 col-md-8 col-lg-9 pull-right">
                         <input type="text" id="searchBox" className="form-control" placeholder="Search for..." aria-label="Search for..." />     
                             <span className="input-group-btn">
-                                <button className="btn btn-secondary" type="submit">Search Flickr!</button>
+                                <button className="btn btn-info" type="submit">Search Flickr!</button>
                             </span>
                         </div>
                         <div className="clearfix"></div>

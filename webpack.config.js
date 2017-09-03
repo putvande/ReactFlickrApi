@@ -1,8 +1,9 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const debug = process.env.NODE_ENV !== "production";
 const path = require('path');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: './client/index.html',
+  template: path.join(__dirname, './client/index.html'),
   filename: 'index.html',
   inject: 'body'
 })
@@ -23,9 +24,25 @@ module.exports = {
       { test: /\.json$/, loader: 'json-loader' }
     ]
   },
-  devtool: 'source-map',
+  devtool: debug ? "inline-sourcemap" : null,
   devServer: {
     historyApiFallback: true
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: debug ? [HtmlWebpackPluginConfig] : [
+    HtmlWebpackPluginConfig,
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': '"production"'
+      }
+    }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: true, 
+      sourcemap: false, 
+      compress: {
+        warnings: false,
+      }
+    })
+  ]
 };

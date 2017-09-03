@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom'
 
 // Include CSS
 require('./style/style.css');
-require('./vendor/test.js');
 
 ReactDOM.render((
 	<BrowserRouter>
