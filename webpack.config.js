@@ -4,7 +4,7 @@ const path = require('path');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './client/index.html',
   filename: 'index.html',
-  inject: 'head'
+  inject: 'body'
 })
 
 module.exports = {

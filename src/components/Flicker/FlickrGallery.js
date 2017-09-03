@@ -43,13 +43,14 @@ constructor(props) {
     render() {
         // results will either be the first time loaded results or the search query, otherwise empty
         const results = this.props.searchResults || this.state.items || [];
+
         return results.length > 0
         ?   <div className="container photoContainer">
                 <Photos items={this.state.items} searchResults={this.props.searchResults} />
             </div>
         : <div className="container noResults">
             <div className="alert alert-info">
-                <h4><strong>No Results Returned. </strong> Please try another search.</h4>
+                <h4><strong>No Results Returned...</strong> Please try another search.</h4>
             </div>
         </div>
     }
