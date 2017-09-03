@@ -60,27 +60,39 @@ body {
     margin-top: 100px;
 }
 
-#searchLabel{
-    margin-top: 5px;
-    margin-right: 20px; 
+.searchLabelText {
+    text-align: left;
 }
 
-@media only screen  and (max-width : 768px) {
+#searchLabel{
+    margin-top: 0;
+}
+
+@media only screen and (max-width : 768px) {
     .card{
         max-width: 70%;
         margin: 0 auto;
         float: none;
     }
-}
 
-@media only screen  and (max-width : 425px) {
-    #searchLabel {
-        display: none;
+    .searchLabelText h4 {
+        font-size: 0.9em;
+    }
+
+    .navbar-fixed-bottom p.navbar-text.pull-left {
+        padding: 0;
+        margin: 0;
+        font-size: 0.8em;
     }
 }
 
+
 .photoContainer {
     text-align: left;
+    visibility: hidden;
+}
+
+.noResults{
     visibility: hidden;
 }
 

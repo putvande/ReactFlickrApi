@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Navigation extends React.Component {
-  
+  // Bootstrap Navbar and Mobile Navbar
     render() {
         return (
             <div>

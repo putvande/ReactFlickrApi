@@ -7,52 +7,51 @@ class FlickrGallery extends React.Component {
 
 constructor(props) {
         super(props);
+            // items is the first time search performed on load, searchQuery
             this.state = {
             items: [],
-            masonry: false,
-            searchQuery : ''
+            masonry: false
         };
     }
 
+    // search query from the SearchBox sibling component via parent
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
         this.runSearchQuery(nextProps.searchQuery);
     }
 
     runSearchQuery(query) {
-        console.log(query);
+        // Use JSONP here to get around CORS not enabled on Flickr, setState, replacing last loading items with new results
         $.getJSON(query)
         .done(function (data) {
             const items = data.items;
             this.setState({ ...this.state, items });
-            // reference to masonry to add complete handler
-           // this.masonry.on('layoutComplete', this.handleLayoutComplete);
         }.bind(this));
     }
 
     componentDidMount() {
         let apiKey = '10742bf3f145558997b8001765ea41b5';
-    
+        // Default query performed on Component Mount - the first results user sees 
         var flickerAPI = 'https://api.flickr.com/services/feeds/photos_public.gne?format=json&lang=en-us&jsoncallback=?';
         $.getJSON(flickerAPI)
         .done(function (data) {
             const items = data.items;
             const masonry = false;
             this.setState({ ...this.state, items, masonry });
-            // reference to masonry to add complete handler
-           // this.masonry.on('layoutComplete', this.handleLayoutComplete);
         }.bind(this));
     }
 
     render() {
+        // results will either be the first time loaded results or the search query, otherwise empty
         const results = this.props.searchResults || this.state.items || [];
-        const masonry = this.masonryState;
-
         return results.length > 0
         ?   <div className="container photoContainer">
                 <Photos items={this.state.items} searchResults={this.props.searchResults} />
             </div>
-        : <div className="container noResults"><br/><h4>No Results</h4></div>
+        : <div className="container noResults">
+            <div className="alert alert-info">
+                <h4><strong>No Results Returned. </strong> Please try another search.</h4>
+            </div>
+        </div>
     }
 
 };

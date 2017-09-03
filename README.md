@@ -18,11 +18,11 @@ This demo is intended to showcase skills using React.js, Webpack and the Flickr 
 * Open Terminal.
 * Type git clone, and then paste the URL you copied. It will look like this, with your GitHub username instead of YOUR-USERNAME:
 ```{bash}
-git clone https://github.com/YOUR-USERNAME/react-startpack
+git clone https://github.com/YOUR-USERNAME/ReactFlickrApi/
 ```
 * Press Enter. Your local clone will be created.
 ```bash
-git clone https://github.com/YOUR-USERNAME/react-startpack
+git clone https://github.com/YOUR-USERNAME/ReactFlickrApi/
 Cloning into `react-startpack`...
 remote: Counting objects: 10, done.
 remote: Compressing objects: 100% (8/8), done.

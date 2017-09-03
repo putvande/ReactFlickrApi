@@ -4,14 +4,15 @@ const path = require('path');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './client/index.html',
   filename: 'index.html',
-  inject: 'body'
+  inject: 'head'
 })
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'bundle.js'
+    filename: '[name].bundle.js',
+    sourceMapFilename: '[name].map'
   },
   module: {
     loaders: [

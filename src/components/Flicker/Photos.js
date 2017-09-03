@@ -12,22 +12,18 @@ constructor(props) {
         this.handleLayoutComplete = this.handleLayoutComplete.bind(this);
     }
 
-    componentDidMount() {
-
-    }
-
+    // Masonry fires this function after the layout is performed
     handleLayoutComplete() {
-       // this.setState({ masonry: true });
-        // prevent flash of content before masonry has fixed it 
+        // initially hidden prevent flash of content before masonry has fixed it 
         document.querySelector('.photoContainer').style.visibility='visible';
+        // Hide loading spinner
         document.querySelector('.fa-circle-o-notch').style.display='none';
     }
 
     render() {
+        // results will either be the first time loaded results or the search query, otherwise empty
         const results = this.props.searchResults || this.props.items || [];
-
-        return results.length > 0
-        ? <Masonry onLayoutComplete={ this.handleLayoutComplete } className="masonryLayout" ref={function(c) {this.masonry = this.masonry || c.masonry;}.bind(this)}>
+        return <Masonry onLayoutComplete={ this.handleLayoutComplete } className="masonryLayout" ref={function(c) {this.masonry = this.masonry || c.masonry;}.bind(this)}>
                     {results.map((t, i) =>
                         <Photo 
                             key={i}
@@ -41,7 +37,6 @@ constructor(props) {
                         />
                     )}
                 </Masonry>
-        : <div className="container noResults"><br/><h4>No Results</h4></div>
     }
 
 };
