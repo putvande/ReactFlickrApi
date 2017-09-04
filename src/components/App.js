@@ -14,9 +14,11 @@ import { Route } from 'react-router-dom';
       <div>
         <Header />
         <Navigation />
+        <switch>
             <Route exact path='/' component={Home}/>
             <Route path='/about' component={About}/>
             <Route exact path='/contact' component={Contact}/>
+        </switch>  
         <Footer />
       </div>
     )
