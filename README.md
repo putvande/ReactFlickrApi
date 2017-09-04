@@ -31,6 +31,6 @@ Unpacking objects: 100% (10/10), done.
 ```
 * Now, you have a local copy of your fork of the react-startpack repository!
 * cd into the project root
-* In the project root, run `yarn install` to install dependencies
-* To start app `yarn start`
-* Or to do a production build, run `yarn build`
+* In the project root, run `npm install` to install dependencies
+* To start app `npm start`
+* Or to do a production build, run `npm build`
