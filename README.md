@@ -33,3 +33,4 @@ Unpacking objects: 100% (10/10), done.
 * cd into the project root
 * In the project root, run `yarn install` to install dependencies
 * To start app `yarn start`
+* Or to do a production build, run `yarn build`
