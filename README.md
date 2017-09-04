@@ -30,7 +30,8 @@ remove: Total 10 (delta 1), reused 10 (delta 1)
 Unpacking objects: 100% (10/10), done.
 ```
 * Now, you have a local copy of your fork of the react-startpack repository!
+* You also need webpack installed. This project was built using version 1
 * cd into the project root
 * In the project root, run `npm install` to install dependencies
 * To start app `npm start`
-* Or to do a production build, run `npm build`
+* Or to do a production build, run `npm run build`
