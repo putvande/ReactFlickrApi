@@ -24,25 +24,33 @@ module.exports = {
       { test: /\.json$/, loader: 'json-loader' }
     ]
   },
-  devtool: debug ? "inline-sourcemap" : null,
+  devtool: 'sourcemap',
   devServer: {
     historyApiFallback: true
   },
   plugins: debug ? [HtmlWebpackPluginConfig] : [
-    HtmlWebpackPluginConfig,
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': '"production"'
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
       }
     }),
+    new webpack.optimize.AggressiveMergingPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      mangle: true, 
-      sourcemap: false, 
+      mangle: true,
       compress: {
-        warnings: false,
-      }
-    })
+        warnings: false, // Suppress uglification warnings
+        pure_getters: true,
+        unsafe: true,
+        unsafe_comps: true,
+        screw_ie8: true
+      },
+      output: {
+        comments: false,
+      },
+      exclude: [/\.min\.js$/gi] // skip pre-minified libs
+    }),
+    HtmlWebpackPluginConfig
   ]
 };

@@ -5,7 +5,8 @@
   "repository": "https://github.com/silversurfer5150/ReactFlickrApi",
   "author": "will-edwards <willedwards@lycos.com>",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build": "webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors"
   },
   "license": "MIT",
   "devDependencies": {

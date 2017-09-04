@@ -5,12 +5,11 @@ import Masonry from 'react-masonry-component';
 
 class FlickrGallery extends React.Component {
 
-constructor(props) {
+    constructor(props) {
         super(props);
             // items is the first time search performed on load, searchQuery
             this.state = {
-            items: [],
-            masonry: false
+            items: []
         };
     }
 
@@ -30,7 +29,7 @@ constructor(props) {
     }
 
     componentDidMount() {
-        let apiKey = '10742bf3f145558997b8001765ea41b5';
+        // let apiKey = '10742bf3f145558997b8001765ea41b5';
         // Default query performed on Component Mount - the first results user sees 
         var flickerAPI = 'https://api.flickr.com/services/feeds/photos_public.gne?format=json&lang=en-us&jsoncallback=?';
         $.getJSON(flickerAPI)

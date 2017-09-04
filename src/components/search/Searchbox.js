@@ -2,6 +2,7 @@ import React from 'react';
 import { isEmpty } from '../../utils/appFunctions';
 
 class Searchbox extends React.Component {
+
     constructor(props) {
     super(props);
     // if a user attempts a null search, they are notified

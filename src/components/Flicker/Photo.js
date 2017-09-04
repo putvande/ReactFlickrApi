@@ -3,6 +3,7 @@ import renderHTML from 'react-render-html';
 import { extractFlickrUserName } from '../../utils/appFunctions';
 
 class Photo extends React.Component {
+    
     render() {
         const loadingImg = require('../../images/imageLoading.gif');
         let { index, title, link, author, authorId, media, tags, description } = this.props;

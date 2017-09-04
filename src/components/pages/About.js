@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default class About extends React.Component {
+class About extends React.Component {
+  
   render() {
     const aboutImg = require('../../images/aboutMe.jpg');
     return (
@@ -21,4 +22,6 @@ export default class About extends React.Component {
       </div>
     )
   }
-}
+};
+
+export default About;

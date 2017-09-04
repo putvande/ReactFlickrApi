@@ -5,9 +5,10 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Footer from './pageWrappers/Footer';
-import { Switch, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
-export default class App extends React.Component {
+ class App extends React.Component {
+
   render() {
     return (
       <div>
@@ -20,4 +21,6 @@ export default class App extends React.Component {
       </div>
     )
   }
-}
+};
+
+export default App;

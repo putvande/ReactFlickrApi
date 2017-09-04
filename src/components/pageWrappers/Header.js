@@ -1,10 +1,10 @@
 import React from 'react';
+const reactLogo = require('../../images/reactLogo.png');
+const flickrLogo = require('../../images/flickrLogo.png');
 
 class Header extends React.Component {
  
     render() {
-        const reactLogo = require('../../images/reactLogo.png');
-        const flickrLogo = require('../../images/flickrLogo.png');
         return (
             <div className="jumbotron bg-secondary">
                 <div className="container">

@@ -9,8 +9,7 @@ class Home extends React.Component {
         // Set up the base search string for API and the state for the next search built
         this.state = {
             queryString : 'https://api.flickr.com/services/feeds/photos_public.gne?format=json&lang=en-us&jsoncallback=?',
-            currentQuery : '',
-            loading: true
+            currentQuery : ''
         };
         // bind child function from search component to parent
         this.runQuery = this.runQuery.bind(this);
@@ -25,10 +24,10 @@ class Home extends React.Component {
     render() {
         // only the user searches are passed here as props, search logic takes place in main FlickrGallery component
         return (
-			<div className="contentContainer">
-				<Searchbox runQuery={ this.runQuery } />
-				<span className="fa fa-circle-o-notch fa-spin"></span>
-				<FlickrGallery searchQuery={ this.state.currentQuery } />
+            <div className="contentContainer">
+                <Searchbox runQuery={ this.runQuery } />
+                <span className="fa fa-circle-o-notch fa-spin"></span>
+                <FlickrGallery searchQuery={ this.state.currentQuery } />
             </div>
         );
     }
